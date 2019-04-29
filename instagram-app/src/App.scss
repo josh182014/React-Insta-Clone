@@ -5,26 +5,3 @@
 .App-link {
   color: #61dafb;
 }
-
-.searchBar {
-  width: 100%;
-  height: 50px;
-  border: 1px solid blue;
-}
-
-.postContainer {
-  border: 1px solid red;
-  
-  .post {
-    border: 1px solid green;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-
-.commentContainer {
-  border: 1px solid purple;
-}

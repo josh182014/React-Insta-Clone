@@ -1,0 +1,11 @@
+.postContainer {
+    border: 1px solid red;
+    
+    .post {
+      border: 1px solid green;
+  
+      img {
+        width: 100%;
+      }
+    }
+  }

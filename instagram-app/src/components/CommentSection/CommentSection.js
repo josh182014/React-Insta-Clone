@@ -1,4 +1,5 @@
 import React from 'react';
+import './CommentSection.scss'
 
 const CommentSection = (props) => {
     console.log('inside CommentSection', props.comments)
