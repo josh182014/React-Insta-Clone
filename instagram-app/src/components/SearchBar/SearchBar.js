@@ -5,7 +5,10 @@ const SearchBar = (props) => {
     console.log(props)
     return (
         <div className='searchBar'>
-            Search Bar Things TODO
+            <div>ICON</div>
+            <div>Instagram Logo</div>
+            <input placeholder='Search'></input>
+            <div>More Icons</div>
         </div>
     )
 }

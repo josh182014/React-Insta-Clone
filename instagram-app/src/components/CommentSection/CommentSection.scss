@@ -1,3 +1,19 @@
 .commentContainer {
-    border: 1px solid purple;
-  }
+    width: 100%;
+
+    .singleCommentContainer {
+        width: 95%;
+        margin: 10px;
+    }
+
+    .newComment {
+        width: calc(100% - 20px);
+        margin: 10px;
+
+        input {
+            width: 100%;
+            height: 40px;
+            border: none;
+        }
+    }
+}
