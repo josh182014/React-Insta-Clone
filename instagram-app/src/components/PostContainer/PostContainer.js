@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection'
 import './PostContainer.scss'
 
@@ -13,8 +14,8 @@ const PostContainer = (props) => {
                         <p><strong>{data.username}</strong></p>
                         <img src={data.imageUrl}></img>
                         <div className='icons'>
-                            <i class="postIcon far fa-heart fa-2x"></i>
-                            <i class="far fa-comment fa-2x"></i>
+                            <i className="postIcon far fa-heart fa-2x"></i>
+                            <i className="far fa-comment fa-2x"></i>
                         </div>
                         <div className='likes'><strong>{data.likes} likes</strong></div>
                         <CommentSection comments={data.comments}/>
@@ -24,5 +25,20 @@ const PostContainer = (props) => {
         </>
     )
 }
+
+
+PostContainer.propTypes = {
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        img: PropTypes.string,
+        name: PropTypes.string,
+      })
+    ).isRequired
+  };
+  
+  PostContainer.defaultProps = {
+    data: []
+  };
 
 export default PostContainer;

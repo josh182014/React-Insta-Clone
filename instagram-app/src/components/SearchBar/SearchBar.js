@@ -10,9 +10,9 @@ const SearchBar = (props) => {
             <div>Instagram Logo</div>
             <input placeholder='Search'></input>
             <div className='rightBarContainer'>
-                <i class="rightBarIcon far fa-compass fa-2x"></i>
-                <i class="rightBarIcon far fa-heart fa-2x"></i>
-                <i class="rightBarIcon far fa-user fa-2x"></i>
+                <i className="rightBarIcon far fa-compass fa-2x"></i>
+                <i className="rightBarIcon far fa-heart fa-2x"></i>
+                <i className="rightBarIcon far fa-user fa-2x"></i>
             </div>
         </div>
     )
