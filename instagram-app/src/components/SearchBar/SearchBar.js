@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.scss'
 
-const SearchBar = (props) => {
+const SearchBar = () => {
     return (
         <div className='searchBar'>
             <i className="barIcon fab fa-instagram fa-3x"></i>

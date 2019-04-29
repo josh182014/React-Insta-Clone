@@ -11,7 +11,6 @@ class App extends React.Component {
     this.state = {
       data: dummyData
     };
-    console.log(App.propTypes)
   }
 
   render() {

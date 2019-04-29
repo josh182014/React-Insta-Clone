@@ -4,15 +4,14 @@ import CommentSection from '../CommentSection/CommentSection'
 import './PostContainer.scss'
 
 const PostContainer = (props) => {
-    console.log(PostContainer.propTypes)
     return (
         <>
             <div className='postContainer'>
                 {props.data.map(data => (
                     <div className='post' key={data.id}>
-                        <img className='thumbnail' src={data.thumbnailUrl}></img>
+                        <img className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></img>
                         <p><strong>{data.username}</strong></p>
-                        <img src={data.imageUrl}></img>
+                        <img src={data.imageUrl} alt='user posted'></img>
                         <div className='icons'>
                             <i className="postIcon far fa-heart fa-2x"></i>
                             <i className="far fa-comment fa-2x"></i>
