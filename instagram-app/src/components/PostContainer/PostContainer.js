@@ -29,9 +29,9 @@ const PostContainer = (props) => {
 PostContainer.propTypes = {
     data: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string,
-        img: PropTypes.string,
-        name: PropTypes.string,
+        id: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired,
       })
     ).isRequired
   };
