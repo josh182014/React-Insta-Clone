@@ -12,7 +12,10 @@ const PostContainer = (props) => {
                         <img className='thumbnail' src={data.thumbnailUrl}></img>
                         <p><strong>{data.username}</strong></p>
                         <img src={data.imageUrl}></img>
-                        <div className='icons'>heart icon comment icon</div>
+                        <div className='icons'>
+                            <i class="postIcon far fa-heart fa-2x"></i>
+                            <i class="far fa-comment fa-2x"></i>
+                        </div>
                         <div className='likes'><strong>{data.likes} likes</strong></div>
                         <CommentSection comments={data.comments}/>
                     </div>
