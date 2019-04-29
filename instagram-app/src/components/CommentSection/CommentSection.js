@@ -9,10 +9,7 @@ const CommentSection = (props) => {
                 {props.comments.map(comment => (
                     <div key={comment.id} className='singleCommentContainer'>
                         <div className='commentUserName'>
-                            <strong>{comment.username}</strong>
-                        </div>
-                        <div className='commentText'>
-                            {comment.text}
+                            <strong>{comment.username}</strong> {comment.text}
                         </div>
                     </div>
                 ))}

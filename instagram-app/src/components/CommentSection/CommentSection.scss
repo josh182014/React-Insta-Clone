@@ -4,6 +4,10 @@
     .singleCommentContainer {
         width: 95%;
         margin: 10px;
+
+        strong {
+            margin-right: 5px;
+        }
     }
 
     .newComment {

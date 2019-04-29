@@ -2,4 +2,29 @@
     width: 100%;
     height: 50px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+        margin: 0 10%;
+    }
+
+    .barIcon {
+        margin-left: 10px;
+    }
+
+    .verticalLine {
+        border-right: 1px solid black;
+        margin: 0 3%;
+        height: 80%;
+        align-self: center;
+    }
+
+    .rightBarContainer {
+        align-items: flex-end;
+    }
+
+    .rightBarIcon {
+        margin: 0 10px;
+    }
   }
