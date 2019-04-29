@@ -4,7 +4,6 @@ import CommentSection from '../CommentSection/CommentSection'
 import './PostContainer.scss'
 
 const PostContainer = (props) => {
-    console.log(props)
     return (
         <>
             <div className='postContainer'>
