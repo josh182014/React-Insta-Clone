@@ -24,8 +24,10 @@ class CommentSection extends React.Component {
 
     test = (event) => {
         event.preventDefault()
+        let username1 = localStorage.getItem('user')
+        console.log(username1)
         this.setState({
-            comments: [...this.state.comments, {username: 'omgisitactuallyworking', text: this.state.input, id: Date.now()}]
+            comments: [...this.state.comments, {username: username1, text: this.state.input, id: Date.now()}]
         })
         console.log('HERE', this.state.comments)
         this.setState({ input: ''})
