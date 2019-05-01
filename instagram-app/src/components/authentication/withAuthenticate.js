@@ -2,7 +2,8 @@ import React from 'react'
 import PostsPage from '../PostContainer/PostsPage'
 import Login from '../login/login'
 
-const withAuthenticate = PostsPage => {
+// const withAuthenticate = () => {
+const withAuthenticate = PostsPage => Login => {
     return class extends React.Component {
         constructor(props) {
             super(props)

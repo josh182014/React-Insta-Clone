@@ -31,6 +31,7 @@ class App extends React.Component {
   }
 }
 
-const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
+// const ComponentFromWithAuthenticate = withAuthenticate();
 
 export default App;
