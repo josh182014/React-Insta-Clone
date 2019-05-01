@@ -16,11 +16,11 @@ class CommentSection extends React.Component {
         console.log(event.target.value)
       };
 
-    addComment = (event) => {
-        event.preventDefault()
-        this.props.addComment(this.props, this.state.input)
-        this.setState({ input: '' })
-    }
+    // addComment = (event) => {
+    //     event.preventDefault()
+    //     this.props.addComment(this.props, this.state.input)
+    //     this.setState({ input: '' })
+    // }
 
     test = (event) => {
         event.preventDefault()

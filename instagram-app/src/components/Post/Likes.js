@@ -4,14 +4,25 @@ class Likes extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            likes: props.comments.likes
+            likes: props.comments.likes,
+            id: props.comments.id
         }
         console.log(this.state.likes)
+        console.log('id', this.state.id)
     }
 
     addLike = () => {
-        let likes = this.state.likes + 1
-        this.setState({ likes })
+        if (sessionStorage.getItem(`liked${this.state.id}`) === this.state.id) {
+            console.log('test')
+            let likes = this.state.likes - 1
+            this.setState({ likes })
+            sessionStorage.removeItem(`liked${this.state.id}`);
+        }
+        else {
+            sessionStorage.setItem(`liked${this.state.id}`, this.state.id)
+            let likes = this.state.likes + 1
+            this.setState({ likes })
+        }
 
     }
     render() {
