@@ -1,28 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection'
+import Likes from '../Post/Likes'
 import './PostContainer.scss'
 
-const PostContainer = (props) => {
-    return (
-        <>
-            <div className='postContainer'>
-                {props.data.map(data => (
-                    <div className='post' key={data.id}>
-                        <img className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></img>
-                        <p><strong>{data.username}</strong></p>
-                        <img src={data.imageUrl} alt='user posted'></img>
-                        <div className='icons'>
-                            <i className="postIcon far fa-heart fa-2x"></i>
-                            <i className="far fa-comment fa-2x"></i>
+class PostContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            likes: props.data
+        }
+    }
+
+    addLike = (event) => {
+        let likes = event.target
+        console.log(likes)
+    }
+
+    render() {
+        return (
+            <>
+                <div className='postContainer'>
+                    {this.props.data.map(data => (
+                        <div className='post' key={data.id}>
+                            <img className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></img>
+                            <p><strong>{data.username}</strong></p>
+                            <img src={data.imageUrl} alt='user posted'></img>
+                            <Likes comments={data} addLike={this.addLike} />
+                            <CommentSection addComment={this.props.addComment} comments={data.comments} id={data.id} />
                         </div>
-                        <div className='likes'><strong>{data.likes} likes</strong></div>
-                        <CommentSection comments={data.comments}/>
-                    </div>
-                ))}
-            </div>
-        </>
-    )
+                    ))}
+                </div>
+            </>
+        )
+    }
 }
 
 

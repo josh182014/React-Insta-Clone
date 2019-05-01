@@ -21,7 +21,7 @@ const dummyData = [
                 id: "3",
                 username: "martinseludo",
                 text: "Can't wait to try it!"
-            }
+            },
         ]
     },
     {

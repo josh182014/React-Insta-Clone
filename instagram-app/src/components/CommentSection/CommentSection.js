@@ -1,23 +1,60 @@
 import React from 'react';
 import './CommentSection.scss'
 
-const CommentSection = (props) => {
-    return (
-        <>
-            <div className='commentContainer'>
-                {props.comments.map(comment => (
-                    <div key={comment.id} className='singleCommentContainer'>
-                        <div className='commentUserName'>
-                            <strong>{comment.username}</strong> {comment.text}
+class CommentSection extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            comments: props.comments,
+            input: ''
+        }
+        console.log(this.state.comments)
+    }
+
+    onUpdate = event => {
+        this.setState({ [event.target.name]: event.target.value });
+        console.log(event.target.value)
+      };
+
+    addComment = (event) => {
+        event.preventDefault()
+        this.props.addComment(this.props, this.state.input)
+        this.setState({ input: '' })
+    }
+
+    test = (event) => {
+        event.preventDefault()
+        this.setState({
+            comments: [...this.state.comments, {username: 'omgisitactuallyworking', text: this.state.input, id: Date.now()}]
+        })
+        console.log('HERE', this.state.comments)
+        this.setState({ input: ''})
+
+    }
+
+    render() {
+        return (
+            <>
+                <div className='commentContainer'>
+                    {this.state.comments.map(comment => (
+                        <div key={comment.id} className='singleCommentContainer'>
+                            <div className='commentUserName'>
+                                <strong>{comment.username}</strong> {comment.text}
+                            </div>
                         </div>
-                    </div>
-                ))}
-                <div className='newComment'>
-                    <input placeholder='Add a comment...'></input>
+                    ))}
+                    <form onSubmit={this.test} className='newComment'>
+                        <input 
+                            name='input' 
+                            onChange={this.onUpdate} 
+                            value={this.state.input} 
+                            placeholder='Add a comment...'>
+                        </input>
+                    </form>
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default CommentSection;
