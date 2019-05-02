@@ -2,7 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection'
 import Likes from '../Post/Likes'
+import styled from 'styled-components'
 import './PostContainer.scss'
+
+const StyledDiv = styled.div`
+
+`;
+
+const StyledPost = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px 1px 0 1px;
+`;
+
+const StyledImg = styled.img`
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    margin: 10px;
+`;
+
+const StyledImgMain = styled.img`
+    width: 100%;
+`;
 
 class PostContainer extends React.Component {
     constructor(props) {
@@ -20,17 +47,17 @@ class PostContainer extends React.Component {
     render() {
         return (
             <>
-                <div className='postContainer'>
+                <StyledDiv className='postContainer'>
                     {this.props.data.map(data => (
-                        <div className='post' key={data.id}>
-                            <img className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></img>
+                        <StyledPost className='post' key={data.id}>
+                            <StyledImg className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></StyledImg>
                             <p><strong>{data.username}</strong></p>
-                            <img src={data.imageUrl} alt='user posted'></img>
+                            <StyledImgMain src={data.imageUrl} alt='user posted'></StyledImgMain>
                             <Likes comments={data} addLike={this.addLike} />
                             <CommentSection addComment={this.props.addComment} comments={data.comments} id={data.id} />
-                        </div>
+                        </StyledPost>
                     ))}
-                </div>
+                </StyledDiv>
             </>
         )
     }

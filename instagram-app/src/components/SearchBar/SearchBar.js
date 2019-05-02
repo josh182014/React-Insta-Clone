@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { StyledButton } from '../login/login'
 import './SearchBar.scss'
 
+const StyledHeader = styled.header`
+
+`;
+
 const StyledDiv = styled.div`
     width: 100%;
     height: 60px;
@@ -36,18 +40,20 @@ const SearchBar = (props) => {
     }
 
     return (
-        <StyledDiv className='searchBar'>
-            <i className="barIcon fab fa-instagram fa-3x"></i>
-            <StyledVL className='verticalLine'></StyledVL>
-            <div>Instagram Logo</div>
-            <StyledInput onChange={props.filterPosts} placeholder='Search'></StyledInput>
-            <StyledButton onClick={logout}>Logout</StyledButton>
-            <StyledRBC className='rightBarContainer'>
-                <i className="rightBarIcon far fa-compass fa-2x"></i>
-                <i className="rightBarIcon far fa-heart fa-2x"></i>
-                <i className="rightBarIcon far fa-user fa-2x"></i>
-            </StyledRBC>
-        </StyledDiv>
+        <StyledHeader>
+            <StyledDiv className='searchBar'>
+                <i className="barIcon fab fa-instagram fa-3x"></i>
+                <StyledVL className='verticalLine'></StyledVL>
+                <div>Instagram Logo</div>
+                <StyledInput onChange={props.filterPosts} placeholder='Search'></StyledInput>
+                <StyledButton onClick={logout}>Logout</StyledButton>
+                <StyledRBC className='rightBarContainer'>
+                    <i className="rightBarIcon far fa-compass fa-2x"></i>
+                    <i className="rightBarIcon far fa-heart fa-2x"></i>
+                    <i className="rightBarIcon far fa-user fa-2x"></i>
+                </StyledRBC>
+            </StyledDiv>
+        </StyledHeader>
     )
 }
 
