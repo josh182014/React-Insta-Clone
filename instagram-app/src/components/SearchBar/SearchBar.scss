@@ -1,27 +1,7 @@
 .searchBar {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    input {
-        margin: 0 10%;
-    }
 
     .barIcon {
         margin-left: 10px;
-    }
-
-    .verticalLine {
-        border-right: 1px solid black;
-        margin: 0 20px;
-        height: 80%;
-        align-self: center;
-    }
-
-    .rightBarContainer {
-        align-items: flex-end;
     }
 
     .rightBarIcon {

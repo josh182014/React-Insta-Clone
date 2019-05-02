@@ -1,4 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledForm = styled.form`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+`;
+
+const StyledInput = styled.input`
+
+`;
+
+export const StyledButton = styled.button`
+    background-color: teal;
+`;
+
 
 class Login extends React.Component {
     constructor() {
@@ -29,14 +45,14 @@ class Login extends React.Component {
         return (
             <div>
                 <h1>Login</h1>
-                <form onSubmit={this.submit}>
-                    <input 
+                <StyledForm onSubmit={this.submit}>
+                    <StyledInput 
                         placeholder='Username'
                         value={this.state.username}
                         onChange={this.onChange}
                         type='text'
                         name='username'>
-                    </input>
+                    </StyledInput>
                     <input 
                         placeholder='Password'
                         value={this.state.password}
@@ -44,8 +60,8 @@ class Login extends React.Component {
                         type='password'
                         name='password'>
                     </input>
-                    <button>Login</button>
-                </form>
+                    <StyledButton>Login</StyledButton>
+                </StyledForm>
             </div>
         )
     }
