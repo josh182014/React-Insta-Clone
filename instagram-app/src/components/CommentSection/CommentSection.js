@@ -1,5 +1,26 @@
 import React from 'react';
+import styled from 'styled-components'
 import './CommentSection.scss'
+
+const StyledCommentContainer = styled.div`
+    width: 100%;
+`;
+
+const StyledSingleCommentContainer = styled.div`
+    width: 95%;
+    margin: 10px;
+`;
+
+const StyledForm = styled.form`
+    width: calc(100% - 20px);
+    margin: 10px;
+`;
+
+const StyledInput = styled.input`
+    width: 100%;
+    height: 40px;
+    border: none;
+`;
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -37,23 +58,23 @@ class CommentSection extends React.Component {
     render() {
         return (
             <>
-                <div className='commentContainer'>
+                <StyledCommentContainer className='commentContainer'>
                     {this.state.comments.map(comment => (
-                        <div key={comment.id} className='singleCommentContainer'>
-                            <div className='commentUserName'>
+                        <StyledSingleCommentContainer key={comment.id} className='singleCommentContainer'>
+                            <div>
                                 <strong>{comment.username}</strong> {comment.text}
                             </div>
-                        </div>
+                        </StyledSingleCommentContainer>
                     ))}
-                    <form onSubmit={this.test} className='newComment'>
-                        <input 
+                    <StyledForm onSubmit={this.test} className='newComment'>
+                        <StyledInput 
                             name='input' 
                             onChange={this.onUpdate} 
                             value={this.state.input} 
                             placeholder='Add a comment...'>
-                        </input>
-                    </form>
-                </div>
+                        </StyledInput>
+                    </StyledForm>
+                </StyledCommentContainer>
             </>
         )
     }
