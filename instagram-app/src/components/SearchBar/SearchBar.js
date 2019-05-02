@@ -6,7 +6,6 @@ import './SearchBar.scss'
 const StyledHeader = styled.header`
     width: 100%;
     display: flex;
-    border: 1px solid red;
 `;
 
 const StyledDiv = styled.div`
