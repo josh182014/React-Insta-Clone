@@ -34,7 +34,7 @@ const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
-    background-color: teal;
+    background-color: #ffffff;
 `;
 
 
