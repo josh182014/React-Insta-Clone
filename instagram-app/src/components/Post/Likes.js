@@ -3,6 +3,13 @@ import styled from 'styled-components'
 
 const StyledImgMain = styled.img`
     width: 100%;
+    align-self: center;
+`;
+
+const StyledDiv = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 `;
 
 class Likes extends React.Component {
@@ -34,16 +41,16 @@ class Likes extends React.Component {
     }
     render() {
         return (
-            <div>
-            <StyledImgMain onDoubleClick={this.addLike} src={this.state.img} alt='user posted'></StyledImgMain>
-            <div className='icons'>
-                <i onClick={this.addLike} className="postIcon far fa-heart fa-2x"></i>
-                <i className="far fa-comment fa-2x"></i>
-            </div>
-            <div onClick={this.addLike} className={'likes'}>
-                <strong>{this.state.likes} likes</strong>
-            </div>
-            </div>
+            <StyledDiv>
+                <StyledImgMain onDoubleClick={this.addLike} src={this.state.img} alt='user posted'></StyledImgMain>
+                <div className='icons'>
+                    <i onClick={this.addLike} className="postIcon far fa-heart fa-2x"></i>
+                    <i className="far fa-comment fa-2x"></i>
+                </div>
+                <div onClick={this.addLike} className={'likes'}>
+                    <strong>{this.state.likes} likes</strong>
+                </div>
+            </StyledDiv>
         )
     }
 }
