@@ -27,10 +27,6 @@ const StyledImg = styled.img`
     margin: 10px;
 `;
 
-const StyledImgMain = styled.img`
-    width: 100%;
-`;
-
 class PostContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -52,7 +48,6 @@ class PostContainer extends React.Component {
                         <StyledPost className='post' key={data.id}>
                             <StyledImg className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></StyledImg>
                             <p><strong>{data.username}</strong></p>
-                            <StyledImgMain src={data.imageUrl} alt='user posted'></StyledImgMain>
                             <Likes comments={data} addLike={this.addLike} />
                             <CommentSection addComment={this.props.addComment} comments={data.comments} id={data.id} />
                         </StyledPost>

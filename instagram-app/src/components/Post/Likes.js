@@ -1,14 +1,21 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const StyledImgMain = styled.img`
+    width: 100%;
+`;
 
 class Likes extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             likes: props.comments.likes,
-            id: props.comments.id
+            id: props.comments.id,
+            img: props.comments.imageUrl
         }
         console.log(this.state.likes)
         console.log('id', this.state.id)
+        console.log(this.state.img)
     }
 
     addLike = () => {
@@ -28,6 +35,7 @@ class Likes extends React.Component {
     render() {
         return (
             <div>
+            <StyledImgMain onDoubleClick={this.addLike} src={this.state.img} alt='user posted'></StyledImgMain>
             <div className='icons'>
                 <i onClick={this.addLike} className="postIcon far fa-heart fa-2x"></i>
                 <i className="far fa-comment fa-2x"></i>
