@@ -27,6 +27,11 @@ const StyledImg = styled.img`
     margin: 10px;
 `;
 
+const StyledP = styled.p`
+    margin: 5px;
+    margin-bottom: 10px;
+`;
+
 class PostContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -47,7 +52,7 @@ class PostContainer extends React.Component {
                     {this.props.data.map(data => (
                         <StyledPost className='post' key={data.id}>
                             <StyledImg className='thumbnail' src={data.thumbnailUrl} alt='user thumbnail'></StyledImg>
-                            <p><strong>{data.username}</strong></p>
+                            <StyledP><strong>{data.username}</strong></StyledP>
                             <Likes comments={data} addLike={this.addLike} />
                             <CommentSection addComment={this.props.addComment} comments={data.comments} id={data.id} />
                         </StyledPost>
