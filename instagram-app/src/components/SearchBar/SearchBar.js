@@ -4,7 +4,9 @@ import { StyledButton } from '../login/login'
 import './SearchBar.scss'
 
 const StyledHeader = styled.header`
-
+    width: 100%;
+    display: flex;
+    border: 1px solid red;
 `;
 
 const StyledDiv = styled.div`
@@ -23,11 +25,12 @@ const StyledVL = styled.div`
 `;
 
 const StyledInput = styled.input`
-    margin: 0 10%;
+    // margin: 0 10%;
 `;
 
 const StyledRBC = styled.div`
     align-items: flex-end;  
+    display: flex;
 `;
 
 const SearchBar = (props) => {
